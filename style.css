@@ -34,6 +34,7 @@ body {
     font-size: 24px;
     font-weight: 700;
     color: #1a1a1a;
+    text-decoration: none;
 }
 
 .nav-links {
@@ -183,6 +184,22 @@ body {
     line-height: 1.8;
     color: #4a4a4a;
     max-width: 900px;
+}
+
+.projects-page-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ff7b5f;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.projects-page-subtitle {
+    font-size: 18px;
+    color: #4a4a4a;
+    margin-bottom: 50px;
+    max-width: 700px;
+    line-height: 1.6;
 }
 
 .project-category {
