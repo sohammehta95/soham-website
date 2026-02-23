@@ -76,7 +76,12 @@
         mermaid.initialize({
             startOnLoad: true,
             theme: 'neutral',
-            flowchart: { useMaxWidth: true, htmlLabels: true }
+            flowchart: { useMaxWidth: false, htmlLabels: true, curve: 'basis' },
+            sequence: { useMaxWidth: false },
+            themeVariables: {
+                fontSize: '16px',
+                nodePadding: 15
+            }
         });
     </script>
 </body>
