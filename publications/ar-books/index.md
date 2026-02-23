@@ -4,31 +4,30 @@ title: "Augmented Reality Books: An Immersive Approach to Learning"
 publication_id: ar-books
 ---
 
-## Implementation
+## Overview
 
-The system uses a **marker-less image and text based approach** built on the Vuforia SDK integrated with Unity. A 2-tier client-server architecture separates the rendering (client) from the data storage and processing (server), keeping the app lightweight on mobile devices.
+This paper presents an augmented reality system that transforms traditional textbooks into interactive learning experiences. Students hover their smartphone camera over a page and the system overlays related 3D models, videos, or explanations directly on the identified content — no typing or searching required.
 
-### System Architecture
+The system supports both **image recognition** (marker-less, using Vuforia feature points) and **text recognition** (printed English words matched against a word list), making it work with a wide range of textbook content.
 
-The architecture divides into a **client side layer** (camera GUI, autofocus, content tracking, marker/text detection) and a **server side layer** (image target database, information retrieval, model mapping). The client identifies whether the target is an image or text, forwards it to the server, which returns the corresponding 3D model or video.
+## System Architecture
 
-![System Architecture](/assets/images/ar-books/paper-architecture.png)
+A 2-tier client-server architecture keeps the mobile app lightweight. The client handles camera input, autofocus, and content tracking, while the server stores image targets and maps them to corresponding 3D models or videos.
 
-### Key Modules
+![System Architecture](/assets/images/ar-books/fig-system-architecture.png)
 
-- **Image Recognition** — Vuforia's image targets are recognized via feature points (no special markers needed). Images are rated by feature density; higher ratings yield faster recognition.
-- **Text Recognition** — Vuforia detects printed English words matched against a pre-defined word list, highlighted with a blue bounding box.
-- **Model Augmentation** — 3D models (e.g., a ceramic resistor) are rendered over identified text or images in real-time.
-- **Video Augmentation** — Explanatory videos with full playback controls are overlaid on recognized image targets.
+## Results
 
-![Implementation Details — Vuforia Portal, Image Targets, Text Recognition, Model & Video Augmentation](/assets/images/ar-books/paper-implementation.png)
+The system demonstrates three core augmentation capabilities:
 
-### Deployment & Results
+**3D Model Augmentation** — When the camera identifies a keyword like "Ceramic Resistors", a 3D model of the component is rendered directly over the text.
 
-The system is deployed cross-platform via Unity (Android, iOS). Users install the app, hover their smartphone camera over a textbook page, and the system augments 3D models, videos, or explanations over the identified content.
+![3D Model Augmented on Identified Text](/assets/images/ar-books/fig-model-augmentation.png)
 
-![Deployment and Interactive Learning System](/assets/images/ar-books/paper-results.png)
+**Video Augmentation** — Hovering over an image target plays an explanatory video with full playback controls.
 
-### Proposed System Flow
+![Video Augmentation on an Image Target](/assets/images/ar-books/fig-video-augmentation.png)
 
-![Proposed System Flow](/assets/images/ar-books/paper-proposed-approach.png)
+**Interactive Learning** — The fully deployed system running on a smartphone, augmenting a 3D resistor model on identified text in a real textbook.
+
+![An Interactive Learning System](/assets/images/ar-books/fig-interactive-system.png)
