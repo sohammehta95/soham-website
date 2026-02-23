@@ -169,14 +169,38 @@ body {
     font-size: 32px;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 
-.company-info,
-.degree-info {
-    font-size: 16px;
-    color: #4a4a4a;
+.role {
     margin-bottom: 20px;
+    padding-left: 16px;
+    border-left: 2px solid #e0dad5;
+}
+
+.role:last-child {
+    margin-bottom: 0;
+}
+
+.role-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+
+.role-title {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+    color: #ff7b5f;
+}
+
+.role-date {
+    font-size: 14px;
+    color: #7a7a7a;
+    font-variant-numeric: tabular-nums;
 }
 
 .description {
@@ -184,6 +208,11 @@ body {
     line-height: 1.8;
     color: #4a4a4a;
     max-width: 900px;
+}
+
+.edu-highlight {
+    font-weight: 600;
+    color: #ff7b5f;
 }
 
 .projects-page-title {
