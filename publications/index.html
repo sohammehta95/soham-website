@@ -1,0 +1,108 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publications - Soham Mehta">
+    <title>Publications - Soham Mehta</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Soham</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/projects" class="nav-link">Projects</a>
+                <a href="/publications" class="nav-link active">Publications</a>
+                <a href="/blog" class="nav-link">Blog</a>
+            </div>
+            <a href="https://www.linkedin.com/in/sohammehta95/" target="_blank" class="linkedin-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="pub-page">
+            <h1 class="pub-page-title">Publications</h1>
+            <p class="pub-page-subtitle">Research papers and academic publications.</p>
+
+            <div class="pub-list">
+                {% for pub in site.data.publications %}
+                <div class="pub-item">
+                    <div class="pub-item-header">
+                        <a href="{{ pub.detail_page }}" class="pub-title">{{ pub.title }}</a>
+                        <div class="pub-authors">
+                            {% for author in pub.authors %}{% if author.highlight %}<strong>{{ author.name }}</strong>{% else %}{{ author.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
+                        </div>
+                        <div class="pub-venue">{{ pub.venue }}, {{ pub.year }}</div>
+                    </div>
+
+                    <div class="pub-links">
+                        {% for link in pub.links %}
+                        <a href="{{ link.url }}" target="_blank" class="pub-link-btn">{{ link.label }} &#8599;</a>
+                        {% endfor %}
+                        <button class="pub-toggle" data-target="abstract-{{ pub.id }}" data-show-text="Abstract &#9662;" data-hide-text="Abstract &#9652;">Abstract &#9662;</button>
+                        <button class="pub-toggle" data-target="bibtex-{{ pub.id }}" data-show-text="BibTeX &#9662;" data-hide-text="BibTeX &#9652;">BibTeX &#9662;</button>
+                    </div>
+
+                    <div id="abstract-{{ pub.id }}" class="pub-abstract pub-hidden">
+                        <p>{{ pub.abstract }}</p>
+                    </div>
+
+                    <div id="bibtex-{{ pub.id }}" class="pub-bibtex pub-hidden">
+                        <pre><code>{{ pub.bibtex }}</code></pre>
+                    </div>
+
+                    {% if pub.tags %}
+                    <div class="pub-tags">
+                        {% for tag in pub.tags %}
+                        <span class="pub-tag">#{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ADDRESS</h4>
+                    <p>San Jose</p>
+                    <p>California, 95134</p>
+                </div>
+                <div class="footer-section">
+                    <h4>CONTACTS</h4>
+                    <p><a href="mailto:soham.mehta1995@gmail.com">soham.mehta1995@gmail.com</a></p>
+                </div>
+                <div class="footer-section">
+                    <a href="https://www.linkedin.com/in/sohammehta95/" target="_blank" class="footer-linkedin">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.querySelectorAll('.pub-toggle').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var target = document.getElementById(btn.dataset.target);
+                target.classList.toggle('pub-hidden');
+                btn.innerHTML = target.classList.contains('pub-hidden')
+                    ? btn.dataset.showText : btn.dataset.hideText;
+            });
+        });
+    </script>
+</body>
+</html>

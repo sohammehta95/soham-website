@@ -1,0 +1,29 @@
+- id: ar-books
+  title: "Augmented Reality Books: An Immersive Approach to Learning"
+  authors:
+    - name: Soham Mehta
+      highlight: true
+    - name: Pratish Jain
+    - name: Aayushi Vora
+    - name: Abhijit Joshi
+    - name: Harshal Dalvi
+  venue: "8th International Conference on Computing, Communication, Control and Automation (ICCUBEA)"
+  year: 2017
+  abstract: "Learning from books is a very mundane and passive process. The user has to do all the learning merely with the help of a static text, which makes the learning process tedious and tiring. More importantly, there are no means for the user to learn more about unknown concepts or jargons given in those books. In spite of these pitfalls, most of the education systems today are based on learning from these stale books. In this paper, the authors present a unique solution that uses augmented reality to make the learning process more interactive and interesting. A system is developed for the students wherein they have to just hover a camera over the text or image present in the book. In turn, the system shows the related graphical data augmented over the identified text or image. The system helps the students learn new concepts by simply using a smartphone and the intended book. Apart from the usage in education, it can also be used in the field of advertisement, medicine, gaming and entertainment."
+  links:
+    - label: Paper
+      url: https://www.researchgate.net/publication/322137851_Augmented_Reality_Books_An_Immersive_Approach_to_Learning
+    - label: Google Scholar
+      url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pjZnB7kAAAAJ&citation_for_view=pjZnB7kAAAAJ:u-x6o8ySG0sC"
+  bibtex: |
+    @inproceedings{mehta2017augmented,
+      title={Augmented Reality Books: An Immersive Approach to Learning},
+      author={Mehta, Soham and Jain, Pratish and Vora, Aayushi and Joshi, Abhijit and Dalvi, Harshal},
+      booktitle={8th International Conference on Computing, Communication, Control and Automation (ICCUBEA)},
+      year={2017}
+    }
+  detail_page: /publications/ar-books/
+  tags:
+    - augmented-reality
+    - education
+    - computer-vision

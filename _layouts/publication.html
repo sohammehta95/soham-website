@@ -6,7 +6,6 @@
     <meta name="description" content="{{ page.title }} - Soham Mehta">
     <title>{{ page.title }} - Soham Mehta</title>
     <link rel="stylesheet" href="/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -15,8 +14,8 @@
             <div class="nav-links">
                 <a href="/" class="nav-link">Home</a>
                 <a href="/projects" class="nav-link">Projects</a>
-                <a href="/publications" class="nav-link">Publications</a>
-                <a href="/blog" class="nav-link active">Blog</a>
+                <a href="/publications" class="nav-link active">Publications</a>
+                <a href="/blog" class="nav-link">Blog</a>
             </div>
             <a href="https://www.linkedin.com/in/sohammehta95/" target="_blank" class="linkedin-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -26,23 +25,55 @@
         </div>
     </nav>
 
+    {% assign pub = nil %}
+    {% for p in site.data.publications %}
+        {% if p.id == page.publication_id %}
+            {% assign pub = p %}
+        {% endif %}
+    {% endfor %}
+
     <main class="container">
-        <article class="blog-post">
-            <a href="/blog" class="blog-back-link">&larr; Back to Blog</a>
-            <h1 class="blog-post-title">{{ page.title }}</h1>
-            <div class="blog-post-meta">
-                <span class="blog-post-date">{{ page.date | date: "%B %d, %Y" }}</span>
-                {% if page.tags %}
-                <div class="blog-post-tags">
-                    {% for tag in page.tags %}
-                    <span class="blog-tag">#{{ tag }}</span>
-                    {% endfor %}
-                </div>
-                {% endif %}
+        <article class="pub-detail">
+            <a href="/publications" class="pub-back-link">&larr; Back to Publications</a>
+
+            <h1 class="pub-detail-title">{{ pub.title }}</h1>
+
+            <div class="pub-detail-authors">
+                {% for author in pub.authors %}{% if author.highlight %}<strong>{{ author.name }}</strong>{% else %}{{ author.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
             </div>
-            <div class="blog-post-content">
-                {{ content }}
+
+            <div class="pub-detail-venue">{{ pub.venue }}, {{ pub.year }}</div>
+
+            <div class="pub-detail-buttons">
+                {% for link in pub.links %}
+                <a href="{{ link.url }}" target="_blank" class="pub-btn">{{ link.label }} &#8599;</a>
+                {% endfor %}
             </div>
+
+            <div class="pub-detail-section">
+                <h2 class="pub-detail-section-title">Abstract</h2>
+                <p class="pub-detail-abstract">{{ pub.abstract }}</p>
+            </div>
+
+            {% if pub.image %}
+            <div class="pub-detail-section">
+                <img src="{{ pub.image }}" alt="{{ pub.title }}" class="pub-detail-image">
+            </div>
+            {% endif %}
+
+            {{ content }}
+
+            <div class="pub-detail-section">
+                <h2 class="pub-detail-section-title">BibTeX</h2>
+                <pre class="pub-detail-bibtex"><code>{{ pub.bibtex }}</code></pre>
+            </div>
+
+            {% if pub.acknowledgments %}
+            <div class="pub-detail-section">
+                <h2 class="pub-detail-section-title">Acknowledgments</h2>
+                <p class="pub-detail-abstract">{{ pub.acknowledgments }}</p>
+            </div>
+            {% endif %}
         </article>
 
         <footer class="footer">
@@ -66,24 +97,5 @@
             </div>
         </footer>
     </main>
-    <script>
-        // Convert kramdown mermaid code blocks to mermaid divs
-        document.querySelectorAll('pre code.language-mermaid').forEach(function(el) {
-            var div = document.createElement('div');
-            div.className = 'mermaid';
-            div.textContent = el.textContent;
-            el.parentElement.replaceWith(div);
-        });
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: 'neutral',
-            flowchart: { useMaxWidth: false, htmlLabels: true, curve: 'basis' },
-            sequence: { useMaxWidth: false },
-            themeVariables: {
-                fontSize: '16px',
-                nodePadding: 15
-            }
-        });
-    </script>
 </body>
 </html>
