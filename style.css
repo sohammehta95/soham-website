@@ -574,6 +574,29 @@ body {
     margin: 48px 0;
 }
 
+/* PDF Viewer */
+.pdf-viewer {
+    margin: 0;
+    max-width: none;
+    width: calc(100vw - 120px);
+    max-width: 960px;
+}
+
+.pdf-viewer embed {
+    border: 1px solid #e0dad5;
+    border-radius: 6px;
+}
+
+.pdf-fallback {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #7a7a7a;
+}
+
+.pdf-fallback a {
+    color: #ff7b5f;
+}
+
 @media (max-width: 768px) {
     .nav-container {
         padding: 0 20px;
