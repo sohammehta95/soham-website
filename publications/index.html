@@ -37,7 +37,16 @@ layout: null
                 {% for pub in site.data.publications %}
                 <div class="pub-item">
                     <div class="pub-item-header">
-                        <a href="{{ pub.detail_page }}" class="pub-title">{{ pub.title }}</a>
+                        <div class="pub-title-row">
+                            <a href="{{ pub.detail_page }}" class="pub-title">{{ pub.title }}</a>
+                            {% if pub.tags %}
+                            <div class="pub-tags">
+                                {% for tag in pub.tags %}
+                                <span class="pub-tag">#{{ tag }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
                         <div class="pub-authors">
                             {% for author in pub.authors %}{% if author.highlight %}<strong>{{ author.name }}</strong>{% else %}{{ author.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
                         </div>
@@ -60,13 +69,6 @@ layout: null
                         <pre><code>{{ pub.bibtex }}</code></pre>
                     </div>
 
-                    {% if pub.tags %}
-                    <div class="pub-tags">
-                        {% for tag in pub.tags %}
-                        <span class="pub-tag">#{{ tag }}</span>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
                 </div>
                 {% endfor %}
             </div>

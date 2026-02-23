@@ -627,6 +627,13 @@ body {
     border-top: 1px solid #e0dad5;
 }
 
+.pub-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
 .pub-title {
     font-size: 20px;
     font-weight: 700;
