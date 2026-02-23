@@ -843,6 +843,58 @@ body {
     margin: 12px 0;
 }
 
+/* Publication Detail Content (markdown rendered) */
+.pub-detail-content {
+    max-width: 800px;
+    margin-bottom: 36px;
+}
+
+.pub-detail-content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+.pub-detail-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.pub-detail-content p {
+    font-size: 16px;
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.pub-detail-content img {
+    max-width: 100%;
+    border-radius: 6px;
+    border: 1px solid #e0dad5;
+    margin: 20px 0;
+}
+
+.pub-detail-content ul {
+    margin-bottom: 16px;
+    padding-left: 24px;
+}
+
+.pub-detail-content li {
+    font-size: 16px;
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.pub-detail-content strong {
+    color: #1a1a1a;
+}
+
 .pub-detail-bibtex {
     background: #2a2a2a;
     color: #e8e3de;
