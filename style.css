@@ -525,6 +525,41 @@ body {
     margin-bottom: 8px;
 }
 
+.blog-post-content .mermaid {
+    margin: 32px 0;
+    text-align: center;
+}
+
+.blog-post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 15px;
+}
+
+.blog-post-content th {
+    background: #e8e3de;
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 14px;
+    border: 1px solid #d4cec9;
+}
+
+.blog-post-content td {
+    padding: 10px 14px;
+    border: 1px solid #e0dad5;
+}
+
+.blog-post-content tr:nth-child(even) {
+    background: rgba(232, 227, 222, 0.3);
+}
+
+.blog-post-content hr {
+    border: none;
+    border-top: 1px solid #e0dad5;
+    margin: 48px 0;
+}
+
 @media (max-width: 768px) {
     .nav-container {
         padding: 0 20px;
