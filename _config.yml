@@ -1,0 +1,6 @@
+title: Soham Mehta
+description: AI Software Engineer
+url: https://soham-mehta.com
+permalink: /blog/:slug/
+markdown: kramdown
+exclude: [README.md, Gemfile, Gemfile.lock]
