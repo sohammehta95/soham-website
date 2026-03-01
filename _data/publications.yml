@@ -1,3 +1,28 @@
+- id: ar-integrating
+  title: "Augmented Reality: Integrating the Real and Virtual World"
+  authors:
+    - name: Soham Mehta
+      highlight: true
+    - name: Bhakti Raichura
+  venue: "ASCII Conference, D.J. Sanghvi College of Engineering, Mumbai"
+  year: 2016
+  abstract: "Augmented Reality is a revolution in technology in which the user is immersed not only into a virtual world but is present in the physical world itself with objects augmented into it. These objects also provide a link into a computer network. Rather than immersing people in an artificially created virtual world, the goal is to augment objects in the physical world by enhancing them with a wealth of digital information and communication capabilities. This paper explores three approaches to augmentation — augmenting the user, the physical object, and the surrounding environment — and presents a marker-based AR system architecture for Android that makes speech visible to deaf people on an AR display."
+  links:
+    - label: PDF
+      url: /assets/pdfs/augmented-reality-integrating-real-virtual.pdf
+  bibtex: |
+    @inproceedings{mehta2016augmented,
+      title={Augmented Reality: Integrating the Real and Virtual World},
+      author={Mehta, Soham and Raichura, Bhakti},
+      booktitle={ASCII Conference, D.J. Sanghvi College of Engineering},
+      year={2016}
+    }
+  detail_page: /publications/ar-integrating/
+  tags:
+    - augmented-reality
+    - marker-based
+    - android
+
 - id: ar-books
   title: "Augmented Reality Books: An Immersive Approach to Learning"
   authors:
