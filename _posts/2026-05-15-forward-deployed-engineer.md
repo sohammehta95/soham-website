@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Forward Deployed Engineer: The Most Human Job in an AI-First World"
+title: "The New AI Engineer Role"
 date: 2026-05-15
 tags:
   - ai
