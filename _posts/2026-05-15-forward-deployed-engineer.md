@@ -13,6 +13,30 @@ slug: forward-deployed-engineer
 
 ---
 
+```mermaid
+flowchart LR
+    subgraph Lab [AI Lab]
+        M[Frontier Model]
+        PT[Product & Engineering]
+    end
+    subgraph FDE [Forward Deployed Engineer]
+        direction TB
+        W[Writes Production Code]
+        T[Translates Customer Reality]
+        S[Ships Inside Customer Env]
+    end
+    subgraph Customer [Enterprise Customer]
+        D[(Messy Data\n& Systems)]
+        ST[Stakeholders]
+        LG[Legacy Constraints]
+    end
+    Lab -->|model + context| FDE
+    FDE -->|deploys & integrates| Customer
+    FDE -->|feeds patterns back| Lab
+```
+
+---
+
 The title has been stuck in my head for a few weeks now. **Forward Deployed Engineer.** Not "customer engineer." Not "solutions engineer." Not "field engineer." Something about the word *forward* and the word *deployed* together does something specific. It sounds like you're being sent somewhere uncomfortable on purpose. Like the role itself is admitting upfront that the work happens somewhere hard.
 
 I think that framing is exactly right. And it tells you more about the job than any job description does.
